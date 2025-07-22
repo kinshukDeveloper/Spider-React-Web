@@ -4,22 +4,42 @@ const powers = Array(7).fill("Believe in doing business with honesty");
 
 export default function About() {
   return (
-    <section id="about-us">
+    <section id="about-us" className="py-5">
       <div className="container">
-        <h1 className="title text-center">Powers of Spidey</h1>
-        <div className="row">
-          <div className="col-md-3">
-            <img src="/images/pngwing.com (8).png" alt="powers" className="powers" />
+        <h1 className="title mb-4 h3 h-md2 h-lg1">Powers of Spider Man</h1>
+
+        <div className="row align-items-center">
+          {/* Left Image */}
+          <div className="col-12 col-md-4 mb-4 mb-md-0 text-center">
+            <img
+              src="/images/pngwing.com (8).png"
+              alt="spidey powers"
+              className="img-fluid powers"
+              style={{ maxHeight: '300px' }}
+            />
           </div>
-          <div className="col-md-5 about-us">
-            <p className="about-title text-center">Unleash the spidey</p>
+
+          {/* Text Column */}
+          <div className="col-12 col-md-4 mb-4 mb-md-0 text-center text-md-left">
+            <p className="about-title text-center text-md-left h2 h-md2 h-lg1">Unleash the spidey</p>
             <hr />
-            <ul className="text-center" style={{ listStyle: 'none' }}>
-              {powers.map((item, index) => <li key={index}>{item}</li>)}
+            <ul className="list-unstyled">
+              {powers.map((item, i) => (
+                <li key={i} className="mb-2">
+                  <span role="img" aria-label="web">🕸️</span> {item}
+                </li>
+              ))}
             </ul>
           </div>
-          <div className="col-md-4">
-            <img src="/images/pngwing.com (9).png" alt="eye" className="eye" />
+
+          {/* Right Image */}
+          <div className="col-12 col-md-4 text-center">
+            <img
+              src="/images/pngwing.com (9).png"
+              alt="spidey sense"
+              className="img-fluid eye"
+              style={{ maxHeight: '300px' }}
+            />
           </div>
         </div>
       </div>

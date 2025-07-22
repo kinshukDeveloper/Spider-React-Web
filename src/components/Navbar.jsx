@@ -1,27 +1,49 @@
 import React from 'react';
 
 export default function Navbar() {
+  const navItems = ['HOME', 'SERVICES', 'ABOUT', 'TESTIMONIALS', 'CONTACT'];
+
   return (
-    <section id="nav-bar">
-      <nav className="navbar navbar-expand-sm navbar-light bg-light">
+    <header id="nav-bar" className="sticky-top">
+      <nav className="navbar navbar-expand-md navbar-dark bg-dark py-2">
         <div className="container">
-          <a className="navbar-brand text-white" href="#">
-            <img src="/images/pngwing.com (4).png" className="brand-logo" alt="logo" />
+          {/* Brand Logo */}
+          <a className="navbar-brand" href="#">
+            <img
+              src="/images/pngwing.com (4).png"
+              alt="logo"
+              className="brand-logo"
+              style={{ height: '40px' }}
+            />
           </a>
-          <button className="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
-            <i className="fa fa-bars"></i>
+
+          {/* Hamburger Toggle */}
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarResponsive"
+            aria-controls="navbarResponsive"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
           </button>
-          <div className="collapse navbar-collapse" id="collapsibleNavId">
-            <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
-              {["HOME", "SERVICES", "ABOUT", "TESTIMONIALS", "CONTACT"].map((item, i) => (
+
+          {/* Navbar Links */}
+          <div className="collapse navbar-collapse" id="navbarResponsive">
+            <ul className="navbar-nav ml-auto">
+              {navItems.map((item, i) => (
                 <li className="nav-item" key={i}>
-                  <a className="nav-link text-white" href={`#${item.toLowerCase()}`}>{item}</a>
+                  <a className="nav-link text-white" href={`#${item.toLowerCase()}`}>
+                    {item}
+                  </a>
                 </li>
               ))}
             </ul>
           </div>
         </div>
       </nav>
-    </section>
+    </header>
   );
 }
