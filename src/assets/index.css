@@ -206,6 +206,7 @@
     
     .social-icons img {
         width: 60px;
+        margin-inline: 10px;
         transition: .5s;
     }
     
